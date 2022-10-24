@@ -1,28 +1,34 @@
+name: CI
+
 on: push
 
 jobs:
   check:
     runs-on: ubuntu-latest
-    container: leshiy1295/gcc_linters
+    container: keberson/vk-gcc
     steps:
       - uses: actions/checkout@v2 
-      - run: python3 cpplint.py --extensions=cpp src/*.cpp
-      - run: cppcheck --enable=all --suppress=missingIncludeSystem .
+      - run: python3 cpplint.py --extensions=cpp src/*.cpp include/*.h
+      - run: cppcheck --error-exitcode=1 --enable=all --suppress=missingIncludeSystem src/ -I include/
   build:
     runs-on: ubuntu-latest
-    container: leshiy1295/gcc_linters
+    container: keberson/vk-gcc
     needs: [check]
     steps:
     - uses: actions/checkout@v2 
-    - run: make build
-    - name: Upload artifacts
+    - run: cmake .
+    - name: Upload matrix
       uses: actions/upload-artifact@v2
       with:
-        path: main.out
+        path: matrix_calculator_test
+    - name: Upload vector
+      uses: actions/upload-artifact@v2
+      with:
+        path: vector_test
   test:
     runs-on: ubuntu-latest
-    container: leshiy1295/gcc_linters
+    container: keberson/vk-gcc
     needs: [build]
     steps:
       - uses: actions/checkout@v2 
-      - run: make test
+      - run: cmake . &&  cmake --build . &&  CTEST_OUTPUT_ON_FAILURE=TRUE cmake --build . --target test
