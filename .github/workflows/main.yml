@@ -8,8 +8,8 @@ jobs:
     container: keberson/vk-gcc
     steps:
       - uses: actions/checkout@v2 
-      - run: python3 cpplint.py --extensions=cpp src/*.cpp include/*.h
-      - run: cppcheck --error-exitcode=1 --enable=all --suppress=missingIncludeSystem src/ -I include/
+      - run: python3 cpplint.py --extensions=cpp modules/*
+      - run: cppcheck --error-exitcode=1 --enable=all --suppress=missingIncludeSystem modules/
   build:
     runs-on: ubuntu-latest
     container: keberson/vk-gcc
@@ -17,14 +17,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2 
     - run: cmake .
-    - name: Upload matrix
+    - name: Upload tests
       uses: actions/upload-artifact@v2
       with:
-        path: matrix_calculator_test
-    - name: Upload vector
-      uses: actions/upload-artifact@v2
-      with:
-        path: vector_test
+        path: tests
   test:
     runs-on: ubuntu-latest
     container: keberson/vk-gcc
