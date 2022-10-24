@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.23)
 project(2022_2_Teiko)
 
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -fsanitize=leak")
 set(CMAKE_CXX_FLAGS --coverage)
 
 
@@ -20,3 +21,12 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
+
+
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
+add_executable(tests
+        tests/test.cpp)
+target_link_libraries(tests ${GTEST_LIBRARIES} pthread)
+add_test(NAME Tests
+        COMMAND tests)
