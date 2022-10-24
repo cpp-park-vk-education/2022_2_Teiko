@@ -1,0 +1,21 @@
+# ninja log v5
+0	4	1666620607091668003	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	71f95ad54d144730
+0	4	1666620607091668003	/home/iwaly/2022_2_Teiko/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	71f95ad54d144730
+4	13994	1666620621083104779	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	70f62f04c010dfb1
+4	13994	1666620621083104779	/home/iwaly/2022_2_Teiko/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	70f62f04c010dfb1
+13994	14032	0	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	d2780a2be9a5f9ce
+13994	14032	0	/home/iwaly/2022_2_Teiko/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	d2780a2be9a5f9ce
+14032	14035	1666620621123103169	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	2418da524952fd2d
+14032	14035	1666620621123103169	/home/iwaly/2022_2_Teiko/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	2418da524952fd2d
+14035	14038	1666620621127103008	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	b28f56224b6f5810
+14035	14038	1666620621127103008	/home/iwaly/2022_2_Teiko/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	b28f56224b6f5810
+14038	14041	1666620621127103008	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	9616f6f075cb2d81
+14038	14041	1666620621127103008	/home/iwaly/2022_2_Teiko/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	9616f6f075cb2d81
+14041	14043	1666620621131102848	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	e87185414f57b358
+14041	14043	1666620621131102848	/home/iwaly/2022_2_Teiko/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	e87185414f57b358
+14043	14046	1666620621135102686	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	12a9dad96b410fd8
+14043	14046	1666620621135102686	/home/iwaly/2022_2_Teiko/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	12a9dad96b410fd8
+14046	14050	1666620621139102525	CMakeFiles/googletest-populate-complete	84dcafc16cc5cf82
+14046	14050	1666620621139102525	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	84dcafc16cc5cf82
+14046	14050	1666620621139102525	/home/iwaly/2022_2_Teiko/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete	84dcafc16cc5cf82
+14046	14050	1666620621139102525	/home/iwaly/2022_2_Teiko/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	84dcafc16cc5cf82

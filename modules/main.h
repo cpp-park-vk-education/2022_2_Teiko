@@ -1,0 +1,8 @@
+//
+// Created by iwaly on 24.10.22.
+//
+
+#ifndef INC_2022_2_TEIKO_MODULES_MAIN_H
+#define INC_2022_2_TEIKO_MODULES_MAIN_H
+
+#endif //INC_2022_2_TEIKO_MODULES_MAIN_H
