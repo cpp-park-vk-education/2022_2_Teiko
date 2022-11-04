@@ -1,5 +1,0 @@
-/snap/clion/209/bin/cmake/linux/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/snap/clion/209/bin/ninja/linux/ninja -G Ninja -S /home/iwaly/2022_2_Teiko -B /home/iwaly/2022_2_Teiko/cmake-build-debug
--- Found GTest: /usr/lib/x86_64-linux-gnu/cmake/GTest/GTestConfig.cmake (found version "1.11.0")  
--- Configuring done
--- Generating done
--- Build files have been written to: /home/iwaly/2022_2_Teiko/cmake-build-debug
