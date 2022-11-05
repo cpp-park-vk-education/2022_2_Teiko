@@ -8,23 +8,34 @@ jobs:
     container: keberson/vk-gcc
     steps:
       - uses: actions/checkout@v2 
-      - run: python3 cpplint.py --extensions=cpp modules/*
-      - run: cppcheck --error-exitcode=1 --enable=all --suppress=missingIncludeSystem modules/
+      - run: make check
   build:
     runs-on: ubuntu-latest
     container: keberson/vk-gcc
     needs: [check]
     steps:
     - uses: actions/checkout@v2 
-    - run: cmake .
+    - run: make build
     - name: Upload tests
       uses: actions/upload-artifact@v2
       with:
-        path: tests
+        path: run_tests
+    - name: Upload library
+      uses: actions/upload-artifact@v2
+      with:
+        path: libhello.so
   test:
     runs-on: ubuntu-latest
     container: keberson/vk-gcc
     needs: [build]
     steps:
-      - uses: actions/checkout@v2 
-      - run: cmake . &&  cmake --build . &&  CTEST_OUTPUT_ON_FAILURE=TRUE cmake --build . --target test
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+      - name: Run tests
+        shell: bash
+        run: |
+          mv artifact/* .
+          chmod u+x run_tests
+          ./run_tests
+
+

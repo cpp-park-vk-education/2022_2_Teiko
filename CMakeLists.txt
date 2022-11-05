@@ -1,32 +1,14 @@
-cmake_minimum_required(VERSION 3.23)
-project(2022_2_Teiko)
+cmake_minimum_required(VERSION 3.16)
+project(project)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -fsanitize=leak")
-set(CMAKE_CXX_FLAGS --coverage)
 
+add_subdirectory(tests)
 
-add_executable(2022_2_Teiko modules/main.cpp modules/main.h tests/test.cpp)
+set(PROJECT_SRCS
+        src/hello.cpp
+        include/hello.h
+        )
 
-include(FetchContent)
-FetchContent_Declare(
-        googletest
-        GIT_REPOSITORY https://github.com/google/googletest.git
-        GIT_TAG release-1.12.1
-)
-# For Windows: Prevent overriding the parent project's compiler/linker settings
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-FetchContent_MakeAvailable(googletest)
-
-
-enable_testing()
-
-
-
-find_package(GTest REQUIRED)
-include_directories(${GTEST_INCLUDE_DIRS})
-add_executable(tests
-        tests/test.cpp)
-target_link_libraries(tests ${GTEST_LIBRARIES} pthread)
-add_test(NAME Tests
-        COMMAND tests)
+add_library(hello SHARED ${PROJECT_SRCS})
