@@ -21,7 +21,7 @@ jobs:
     - name: Upload tests
       uses: actions/upload-artifact@v2
       with:
-        path: run_tests
+        path: tests/run_tests
     - name: Upload library
       uses: actions/upload-artifact@v2
       with:
