@@ -8,14 +8,16 @@ jobs:
     container: keberson/vk-gcc
     steps:
       - uses: actions/checkout@v2 
-      - run: make check
+      - run: python3 cpplint.py --extensions=cpp src/*.cpp include/*.h tests/*.cpp
+      - run: cppcheck --error-exitcode=1 --enable=all --suppress=missingIncludeSystem src/ tests/ -I include/
   build:
     runs-on: ubuntu-latest
     container: keberson/vk-gcc
     needs: [check]
     steps:
     - uses: actions/checkout@v2 
-    - run: make build
+    - run: cmake .
+    - run: make
     - name: Upload tests
       uses: actions/upload-artifact@v2
       with:
