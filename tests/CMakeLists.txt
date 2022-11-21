@@ -11,7 +11,6 @@ include_directories(${GTEST_INCLUDE_DIRS})
 
 add_executable(run_tests
         test.cpp)
-target_link_libraries(run_tests hello)
 
 target_link_libraries(run_tests ${GTEST_LIBRARIES} pthread)
 add_test(NAME Tests
