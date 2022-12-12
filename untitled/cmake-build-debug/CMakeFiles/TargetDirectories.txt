@@ -1,0 +1,5 @@
+/home/iwaly/2022_2_Teiko/untitled/cmake-build-debug/CMakeFiles/untitled.dir
+/home/iwaly/2022_2_Teiko/untitled/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/iwaly/2022_2_Teiko/untitled/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/iwaly/2022_2_Teiko/untitled/cmake-build-debug/CMakeFiles/untitled_autogen_timestamp_deps.dir
+/home/iwaly/2022_2_Teiko/untitled/cmake-build-debug/CMakeFiles/untitled_autogen.dir

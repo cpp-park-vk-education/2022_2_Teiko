@@ -381,7 +381,7 @@ background:rgb(56,56,86);
          </size>
         </property>
         <property name="currentIndex">
-         <number>3</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tab">
          <attribute name="title">
@@ -889,12 +889,60 @@ background:rgb(56,56,86);
    <slot>change_metrics()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>935</x>
-     <y>102</y>
+     <x>927</x>
+     <y>93</y>
     </hint>
     <hint type="destinationlabel">
      <x>603</x>
      <y>53</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>change_metrics()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>950</x>
+     <y>163</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>629</x>
+     <y>163</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>change_metrics()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>956</x>
+     <y>218</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>627</x>
+     <y>232</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>change_metrics()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>940</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>602</x>
+     <y>26</y>
     </hint>
    </hints>
   </connection>
