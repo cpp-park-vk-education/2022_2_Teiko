@@ -1,6 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#include "./ui_mainwindow.h"
 #include <QMainWindow>
 #include <QProgressBar>
 #include <QMessageBox>
@@ -79,6 +79,7 @@ signals:
     void end_move();
     void bad_ending();
     void send_metric(const QString &metric_name, const QString &sender, int value);
+    void send_final(int all_metrics_sum);
 
 private slots:
 
@@ -161,9 +162,9 @@ private slots:
     //time
     void updateTime();
 
-
-
     void on_pushButton_move_end_clicked();
+
+    void champion(const QString &name);
 
 private:
     Ui::MainWindow *ui;

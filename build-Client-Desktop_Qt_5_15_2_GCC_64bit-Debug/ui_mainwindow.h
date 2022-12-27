@@ -269,6 +269,7 @@ public:
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(1371, 776);
         MainWindow->setMinimumSize(QSize(1370, 0));
+        MainWindow->setWindowTitle(QString::fromUtf8(""));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         horizontalLayout = new QHBoxLayout(centralwidget);
@@ -436,7 +437,7 @@ public:
         money_player_3 = new QLCDNumber(groupBox_player_3);
         money_player_3->setObjectName(QString::fromUtf8("money_player_3"));
         money_player_3->setFont(font);
-        money_player_3->setProperty("intValue", QVariant(25000));
+        money_player_3->setProperty("intValue", QVariant(0));
 
         formLayout_4->setWidget(0, QFormLayout::FieldRole, money_player_3);
 
@@ -498,7 +499,7 @@ public:
         money_player_4 = new QLCDNumber(groupBox_player_4);
         money_player_4->setObjectName(QString::fromUtf8("money_player_4"));
         money_player_4->setFont(font);
-        money_player_4->setProperty("intValue", QVariant(25000));
+        money_player_4->setProperty("intValue", QVariant(0));
 
         formLayout_5->setWidget(0, QFormLayout::FieldRole, money_player_4);
 
@@ -1436,7 +1437,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(3);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1444,7 +1445,6 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         main_player_user_name->setText(QCoreApplication::translate("MainWindow", "\320\230\320\263\321\200\320\276\320\272 1", nullptr));
         groupBox_2->setTitle(QCoreApplication::translate("MainWindow", "\320\234\320\265\321\202\321\200\320\270\320\272\320\270", nullptr));
         label_7->setText(QCoreApplication::translate("MainWindow", "\320\224\320\265\320\275\321\214\320\263\320\270", nullptr));
@@ -1606,6 +1606,7 @@ public:
         groupBox_5->setTitle(QCoreApplication::translate("MainWindow", "\320\247\320\260\321\202", nullptr));
         pushButton_send->setText(QCoreApplication::translate("MainWindow", ">", nullptr));
         menuIt_s_finance->setTitle(QCoreApplication::translate("MainWindow", "It's finance", nullptr));
+        (void)MainWindow;
     } // retranslateUi
 
 };

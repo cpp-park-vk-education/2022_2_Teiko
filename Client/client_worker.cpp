@@ -96,6 +96,17 @@ void client_worker::disconnect_from_host()
     socket->disconnectFromHost();
 }
 
+void client_worker::send_final(int all_metrics_sum){
+    QDataStream clientStream(socket);
+    clientStream.setVersion(QDataStream::Qt_5_7);
+
+    QJsonObject message;
+    message[QStringLiteral("type")] = QStringLiteral("metrics_sum");
+    message[QStringLiteral("sum")] = all_metrics_sum;
+
+    clientStream << QJsonDocument(message).toJson();
+}
+
 void client_worker::json_received(const QJsonObject &doc)
 {
 
@@ -217,15 +228,15 @@ void client_worker::json_received(const QJsonObject &doc)
             return;
         }
 
-        QDataStream clientStream(socket);
-        clientStream.setVersion(QDataStream::Qt_5_7);
-
-        QJsonObject message;
-        message[QStringLiteral("type")] = QStringLiteral("success");
-        clientStream << QJsonDocument(message).toJson();
-
 
         emit change_metric(value.toInt(),metric.toString(),sender.toString());
+    }
+    else if(type.toString().compare(QLatin1String("champion"), Qt::CaseInsensitive) == 0){
+        const QJsonValue name = doc.value(QLatin1String("name"));
+        if(name.isNull() || !name.isString()){
+            return;
+        }
+        emit champion(name.toString());
     }
 }
 

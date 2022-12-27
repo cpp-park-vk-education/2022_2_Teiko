@@ -116,7 +116,7 @@ void general_server::updateTime()
         }
         broadcast(users_names);
 
-        delay(5000);
+        delay(20000);
         QJsonObject news_message;
         news_message[QStringLiteral("type")] = QStringLiteral("news");
         news_message[QStringLiteral("text")] = News[new_number].text;
@@ -257,7 +257,10 @@ void general_server::json_from_logged_in(server_manager *sender, const QJsonObje
         if (is_ready.isNull() || !is_ready.isBool())
                     return;
         sender->is_ready = true;
-        if(all_ready()){
+        if(all_ready() && !final.empty()){
+            send_final();
+        }
+        else if(all_ready()){
             delay(5000);
             QJsonObject message;
             message[QStringLiteral("type")] = QStringLiteral("ready");
@@ -307,13 +310,21 @@ void general_server::json_from_logged_in(server_manager *sender, const QJsonObje
         message[QStringLiteral("metric")] = metric.toString();
         message[QStringLiteral("sender")] = _sender.toString();
         message[QStringLiteral("value")] = value.toInt();
-        broadcast(message, sender);
+        broadcast(message);
 
 
     }
     else if (type.toString().compare(QLatin1String("force_end"), Qt::CaseInsensitive) == 0){
         sender->is_loss = true;
     }
+     else if(type.toString().compare(QLatin1String("metrics_sum"), Qt::CaseInsensitive) == 0){
+        const QJsonValue sum = doc.value(QLatin1String("sum"));
+        if (sum.isNull() )
+            return;
+        final.insert(std::make_pair(sum.toInt(),sender));
+        send_final();
+    }
+
 }
 bool general_server::all_ready(){
     for(int i = 0;i<clients.size();++i){
@@ -323,5 +334,13 @@ bool general_server::all_ready(){
     }
     return true;
 }
+void general_server::send_final(){
+    if(all_ready() && !final.empty()){
+        QJsonObject message;
+        message[QStringLiteral("type")] = QStringLiteral("champion");
+        message[QStringLiteral("name")] = final.begin()->second->get_user_name();
+        broadcast(message);
+    }
+};
 
 

@@ -1,0 +1,334 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "Client"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"target_link_libraries",
+			"target_compile_definitions",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 4,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 17,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 19,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 18,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-DQT_QML_DEBUG -g"
+				},
+				{
+					"backtrace" : 2,
+					"fragment" : "-fPIC"
+				},
+				{
+					"fragment" : "-std=gnu++11"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 2,
+					"define" : "QT_CORE_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "QT_GUI_LIB"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "QT_NETWORK_LIB"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "QT_NO_CAST_FROM_ASCII"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "QT_NO_CAST_TO_ASCII"
+				},
+				{
+					"backtrace" : 2,
+					"define" : "QT_WIDGETS_LIB"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 0,
+					"path" : "/home/iwaly/2022_2_Teiko/build-Client-Desktop_Qt_5_15_2_GCC_64bit-Debug/Client_autogen/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/iwaly/2022_2_Teiko/Client"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/home/iwaly/Qt/5.15.2/gcc_64/include"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/home/iwaly/Qt/5.15.2/gcc_64/include/QtCore"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/home/iwaly/Qt/5.15.2/gcc_64/./mkspecs/linux-g++"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/home/iwaly/Qt/5.15.2/gcc_64/include/QtGui"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/home/iwaly/Qt/5.15.2/gcc_64/include/QtWidgets"
+				},
+				{
+					"backtrace" : 2,
+					"isSystem" : true,
+					"path" : "/home/iwaly/Qt/5.15.2/gcc_64/include/QtNetwork"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					2
+				],
+				"standard" : "11"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"id" : "Client_autogen_timestamp_deps::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 0,
+			"id" : "Client_autogen::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "Client::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-DQT_QML_DEBUG -g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-rdynamic",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/home/iwaly/Qt/5.15.2/gcc_64/lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/iwaly/Qt/5.15.2/gcc_64/lib/libQt5Widgets.so.5.15.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/iwaly/Qt/5.15.2/gcc_64/lib/libQt5Network.so.5.15.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/iwaly/Qt/5.15.2/gcc_64/lib/libQt5Gui.so.5.15.2",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/home/iwaly/Qt/5.15.2/gcc_64/lib/libQt5Core.so.5.15.2",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "Client",
+	"nameOnDisk" : "Client",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				7,
+				8,
+				9,
+				10
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				11
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				12
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "/home/iwaly/2022_2_Teiko/build-Client-Desktop_Qt_5_15_2_GCC_64bit-Debug/Client_autogen/mocs_compilation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "client_worker.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "mainwindow.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "metrics.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "news.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "shop_buttons.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "client_worker.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "mainwindow.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "metrics.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "news.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/home/iwaly/2022_2_Teiko/build-Client-Desktop_Qt_5_15_2_GCC_64bit-Debug/Client_autogen/timestamp",
+			"sourceGroupIndex" : 2
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "/home/iwaly/2022_2_Teiko/build-Client-Desktop_Qt_5_15_2_GCC_64bit-Debug/Client_autogen/timestamp.rule",
+			"sourceGroupIndex" : 3
+		}
+	],
+	"type" : "EXECUTABLE"
+}

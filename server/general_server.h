@@ -13,6 +13,7 @@ public:
     explicit general_server(QObject *parent = nullptr);
     news News[20];
     bool all_ready();
+    void send_final();
 protected:
     void incomingConnection(qintptr socket_descriptor) override;
 public slots:
@@ -32,6 +33,7 @@ private:
     int new_number;
     QTimer *timer;
     int time_s;
+    std::map<int, server_manager*> final;
 signals:
     void log_message(const QString &log);
 };

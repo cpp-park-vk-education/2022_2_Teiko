@@ -20,6 +20,7 @@ public slots:
     void end_move();
     void bad_ending();
     void send_metric(const QString &metric_name,const QString &user_name, int value);
+    void send_final(int all_metrics_sum);
 private slots:
     void on_ready_read();
 signals:
@@ -43,6 +44,7 @@ signals:
     void change_intelligence_from_news(int value);
     void change_hunger_from_news(int value);
     void change_metric(int value, const QString &metric, const QString &user_name);
+    void champion(const QString &name);
 
 private:
     QTcpSocket *socket;

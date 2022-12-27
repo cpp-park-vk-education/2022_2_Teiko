@@ -1,0 +1,5 @@
+/home/iwaly/2022_2_Teiko/build-Client-Desktop_Qt_5_15_2_GCC_64bit-Debug/CMakeFiles/Client.dir
+/home/iwaly/2022_2_Teiko/build-Client-Desktop_Qt_5_15_2_GCC_64bit-Debug/CMakeFiles/edit_cache.dir
+/home/iwaly/2022_2_Teiko/build-Client-Desktop_Qt_5_15_2_GCC_64bit-Debug/CMakeFiles/rebuild_cache.dir
+/home/iwaly/2022_2_Teiko/build-Client-Desktop_Qt_5_15_2_GCC_64bit-Debug/CMakeFiles/Client_autogen_timestamp_deps.dir
+/home/iwaly/2022_2_Teiko/build-Client-Desktop_Qt_5_15_2_GCC_64bit-Debug/CMakeFiles/Client_autogen.dir

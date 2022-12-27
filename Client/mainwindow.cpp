@@ -84,7 +84,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // creating timer and set timeout 1 second
     timer = new QTimer();
-    timer->setInterval(1000);
+    timer->setInterval(100);
     connect(timer, SIGNAL(timeout()), this, SLOT(updateTime()));
 
     //creating client
@@ -109,8 +109,9 @@ MainWindow::MainWindow(QWidget *parent)
         connect(client, &client_worker::change_money_from_news, this, &MainWindow::change_money_from_news);
         connect(client, &client_worker::change_happiness_from_news, this, &MainWindow::change_happiness_from_news);
         connect(client, &client_worker::change_intelligence_from_news, this, &MainWindow::change_intelligence_from_news);
-
+        connect(this, &MainWindow::send_final, client, &client_worker::send_final);
         connect(client, &client_worker::change_metric, this, &MainWindow::change_metric);
+        connect(client, &client_worker::champion, this, &MainWindow::champion);
 
         connect(ui->pushButton_start, &QPushButton::clicked, this, &MainWindow::attempt_connection);
 
@@ -141,7 +142,7 @@ void MainWindow::start_move(){
     ui->progressBar_intelligence->setValue(ui->progressBar_intelligence->value()-intelligenct_decrease);
     ui->lcdNumber->display(ui->lcdNumber->value() - wastes);
 
-    if(move_number == 5){
+    /*if(move_number == 5){
            if(change_money(5000,ui->pushButton_uniform,ui->lcdNumber)) {
                change_metrics(-10,ui->pushButton_uniform,ui->progressBar_happiness);
                change_metrics(5,ui->pushButton_uniform,ui->progressBar_intelligence);
@@ -158,6 +159,7 @@ void MainWindow::start_move(){
            }
            ui->textBrowser_news->append("Вы не купили вовремя школьную форму, пришлось срочно покупать в ближайшем магазине за 5000 рублей\n");
     }
+    */
     if(move_number == 10){
         if((ui->label_coat->text() != ("Куплено")) && (ui->label_jacket->text() != ("Куплено"))){
             ui->textBrowser_news->append("Вы не купили вовремя зимнюю одежду, приходится тратить больше денег на такси\n");
@@ -196,10 +198,14 @@ void MainWindow::game_start(){
     }
     start_move();
 
-};
+}
+
+void MainWindow::champion(const QString &name){
+    QMessageBox::information(this,"Игра закончена","Победитель - " + name +"!");
+    end_game();
+}
 void MainWindow::end_game(){
     buttons_acces(false);
-    QMessageBox::information(this,"Спасибо за игру!","Игра закончена");
     delay(100000);
     client->disconnect_from_host();
 }
@@ -208,16 +214,14 @@ void MainWindow::on_pushButton_move_end_clicked()
 {   ui->pushButton_move_end->setDisabled(true);
     move_number++;
     timer->stop();
-    if(move_number == 19){
-        end_game();
+    if(move_number == 5){
+        emit end_move();
+        emit send_final(ui->progressBar_happiness->value()+ui->progressBar_hunger->value()/3+ui->progressBar_intelligence->value()/2);
         return;
     }
     emit end_move();
     return;
-
-
 }
-
 
 void MainWindow::updateTime()
 {
@@ -226,8 +230,9 @@ void MainWindow::updateTime()
         buttons_acces(false);
         timer->stop();
         ++move_number;
-        if(move_number == 20){
-            end_game();
+        if(move_number == 5){
+            emit end_move();
+            send_final(ui->progressBar_happiness->value()+ui->progressBar_hunger->value()/3+ui->progressBar_intelligence->value()/2);;
             return;
         }
         emit end_move();
@@ -288,9 +293,8 @@ void MainWindow::attempt_connection()
 {   QMessageBox box;
     box.setWindowTitle("It's finance");
     box.setText("Добро пожаловать!\n\n"
-                " С этого момента вы семья из 4 игроков!\n"
                 " Ваша главная задача - максимально эффективно использовать ресурсы,"
-                "чтобы каждый член семьи был счастлив, сыт и интеллектуально удовлетворён.\n"
+                "чтобы вы были счастливы, сыты и интеллектуально удовлетворёны.\n"
                 "Успехов в игре!");
 
     QAbstractButton* ans_yes = box.addButton(tr("хорошо"), QMessageBox::YesRole);

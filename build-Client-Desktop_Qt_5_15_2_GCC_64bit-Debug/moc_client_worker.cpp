@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_client_worker_t {
-    QByteArrayData data[38];
-    char stringdata0[459];
+    QByteArrayData data[42];
+    char stringdata0[500];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -57,19 +57,23 @@ QT_MOC_LITERAL(21, 233, 29), // "change_intelligence_from_news"
 QT_MOC_LITERAL(22, 263, 23), // "change_hunger_from_news"
 QT_MOC_LITERAL(23, 287, 13), // "change_metric"
 QT_MOC_LITERAL(24, 301, 6), // "metric"
-QT_MOC_LITERAL(25, 308, 17), // "connect_to_server"
-QT_MOC_LITERAL(26, 326, 12), // "QHostAddress"
-QT_MOC_LITERAL(27, 339, 7), // "address"
-QT_MOC_LITERAL(28, 347, 4), // "port"
-QT_MOC_LITERAL(29, 352, 20), // "disconnect_from_host"
-QT_MOC_LITERAL(30, 373, 5), // "login"
-QT_MOC_LITERAL(31, 379, 8), // "userName"
-QT_MOC_LITERAL(32, 388, 12), // "send_message"
-QT_MOC_LITERAL(33, 401, 8), // "end_move"
-QT_MOC_LITERAL(34, 410, 10), // "bad_ending"
-QT_MOC_LITERAL(35, 421, 11), // "send_metric"
-QT_MOC_LITERAL(36, 433, 11), // "metric_name"
-QT_MOC_LITERAL(37, 445, 13) // "on_ready_read"
+QT_MOC_LITERAL(25, 308, 8), // "champion"
+QT_MOC_LITERAL(26, 317, 4), // "name"
+QT_MOC_LITERAL(27, 322, 17), // "connect_to_server"
+QT_MOC_LITERAL(28, 340, 12), // "QHostAddress"
+QT_MOC_LITERAL(29, 353, 7), // "address"
+QT_MOC_LITERAL(30, 361, 4), // "port"
+QT_MOC_LITERAL(31, 366, 20), // "disconnect_from_host"
+QT_MOC_LITERAL(32, 387, 5), // "login"
+QT_MOC_LITERAL(33, 393, 8), // "userName"
+QT_MOC_LITERAL(34, 402, 12), // "send_message"
+QT_MOC_LITERAL(35, 415, 8), // "end_move"
+QT_MOC_LITERAL(36, 424, 10), // "bad_ending"
+QT_MOC_LITERAL(37, 435, 11), // "send_metric"
+QT_MOC_LITERAL(38, 447, 11), // "metric_name"
+QT_MOC_LITERAL(39, 459, 10), // "send_final"
+QT_MOC_LITERAL(40, 470, 15), // "all_metrics_sum"
+QT_MOC_LITERAL(41, 486, 13) // "on_ready_read"
 
     },
     "client_worker\0logged_in\0\0login_error\0"
@@ -81,11 +85,12 @@ QT_MOC_LITERAL(37, 445, 13) // "on_ready_read"
     "change_happiness_from_news\0"
     "change_intelligence_from_news\0"
     "change_hunger_from_news\0change_metric\0"
-    "metric\0connect_to_server\0QHostAddress\0"
-    "address\0port\0disconnect_from_host\0"
-    "login\0userName\0send_message\0end_move\0"
-    "bad_ending\0send_metric\0metric_name\0"
-    "on_ready_read"
+    "metric\0champion\0name\0connect_to_server\0"
+    "QHostAddress\0address\0port\0"
+    "disconnect_from_host\0login\0userName\0"
+    "send_message\0end_move\0bad_ending\0"
+    "send_metric\0metric_name\0send_final\0"
+    "all_metrics_sum\0on_ready_read"
 };
 #undef QT_MOC_LITERAL
 
@@ -95,40 +100,42 @@ static const uint qt_meta_data_client_worker[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      24,   14, // methods
+      26,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-      16,       // signalCount
+      17,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  134,    2, 0x06 /* Public */,
-       3,    1,  135,    2, 0x06 /* Public */,
-       5,    1,  138,    2, 0x06 /* Public */,
-       7,    1,  141,    2, 0x06 /* Public */,
-       8,    0,  144,    2, 0x06 /* Public */,
-       9,    0,  145,    2, 0x06 /* Public */,
-      10,    0,  146,    2, 0x06 /* Public */,
-      11,    0,  147,    2, 0x06 /* Public */,
-      12,    1,  148,    2, 0x06 /* Public */,
-      14,    2,  151,    2, 0x06 /* Public */,
-      17,    1,  156,    2, 0x06 /* Public */,
-      18,    1,  159,    2, 0x06 /* Public */,
-      20,    1,  162,    2, 0x06 /* Public */,
-      21,    1,  165,    2, 0x06 /* Public */,
-      22,    1,  168,    2, 0x06 /* Public */,
-      23,    3,  171,    2, 0x06 /* Public */,
+       1,    0,  144,    2, 0x06 /* Public */,
+       3,    1,  145,    2, 0x06 /* Public */,
+       5,    1,  148,    2, 0x06 /* Public */,
+       7,    1,  151,    2, 0x06 /* Public */,
+       8,    0,  154,    2, 0x06 /* Public */,
+       9,    0,  155,    2, 0x06 /* Public */,
+      10,    0,  156,    2, 0x06 /* Public */,
+      11,    0,  157,    2, 0x06 /* Public */,
+      12,    1,  158,    2, 0x06 /* Public */,
+      14,    2,  161,    2, 0x06 /* Public */,
+      17,    1,  166,    2, 0x06 /* Public */,
+      18,    1,  169,    2, 0x06 /* Public */,
+      20,    1,  172,    2, 0x06 /* Public */,
+      21,    1,  175,    2, 0x06 /* Public */,
+      22,    1,  178,    2, 0x06 /* Public */,
+      23,    3,  181,    2, 0x06 /* Public */,
+      25,    1,  188,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      25,    2,  178,    2, 0x0a /* Public */,
-      29,    0,  183,    2, 0x0a /* Public */,
-      30,    1,  184,    2, 0x0a /* Public */,
-      32,    1,  187,    2, 0x0a /* Public */,
-      33,    0,  190,    2, 0x0a /* Public */,
-      34,    0,  191,    2, 0x0a /* Public */,
-      35,    3,  192,    2, 0x0a /* Public */,
-      37,    0,  199,    2, 0x08 /* Private */,
+      27,    2,  191,    2, 0x0a /* Public */,
+      31,    0,  196,    2, 0x0a /* Public */,
+      32,    1,  197,    2, 0x0a /* Public */,
+      34,    1,  200,    2, 0x0a /* Public */,
+      35,    0,  203,    2, 0x0a /* Public */,
+      36,    0,  204,    2, 0x0a /* Public */,
+      37,    3,  205,    2, 0x0a /* Public */,
+      39,    1,  212,    2, 0x0a /* Public */,
+      41,    0,  215,    2, 0x08 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -147,15 +154,17 @@ static const uint qt_meta_data_client_worker[] = {
     QMetaType::Void, QMetaType::Int,   19,
     QMetaType::Void, QMetaType::Int,   19,
     QMetaType::Void, QMetaType::Int, QMetaType::QString, QMetaType::QString,   19,   24,   13,
+    QMetaType::Void, QMetaType::QString,   26,
 
  // slots: parameters
-    QMetaType::Void, 0x80000000 | 26, QMetaType::UShort,   27,   28,
+    QMetaType::Void, 0x80000000 | 28, QMetaType::UShort,   29,   30,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString,   31,
+    QMetaType::Void, QMetaType::QString,   33,
     QMetaType::Void, QMetaType::QString,   16,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::Int,   36,   13,   19,
+    QMetaType::Void, QMetaType::QString, QMetaType::QString, QMetaType::Int,   38,   13,   19,
+    QMetaType::Void, QMetaType::Int,   40,
     QMetaType::Void,
 
        0        // eod
@@ -183,14 +192,16 @@ void client_worker::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
         case 13: _t->change_intelligence_from_news((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 14: _t->change_hunger_from_news((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 15: _t->change_metric((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3]))); break;
-        case 16: _t->connect_to_server((*reinterpret_cast< const QHostAddress(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
-        case 17: _t->disconnect_from_host(); break;
-        case 18: _t->login((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 19: _t->send_message((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 20: _t->end_move(); break;
-        case 21: _t->bad_ending(); break;
-        case 22: _t->send_metric((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
-        case 23: _t->on_ready_read(); break;
+        case 16: _t->champion((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 17: _t->connect_to_server((*reinterpret_cast< const QHostAddress(*)>(_a[1])),(*reinterpret_cast< quint16(*)>(_a[2]))); break;
+        case 18: _t->disconnect_from_host(); break;
+        case 19: _t->login((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 20: _t->send_message((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 21: _t->end_move(); break;
+        case 22: _t->bad_ending(); break;
+        case 23: _t->send_metric((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        case 24: _t->send_final((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 25: _t->on_ready_read(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -307,6 +318,13 @@ void client_worker::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _i
                 return;
             }
         }
+        {
+            using _t = void (client_worker::*)(const QString & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&client_worker::champion)) {
+                *result = 16;
+                return;
+            }
+        }
     }
 }
 
@@ -339,13 +357,13 @@ int client_worker::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 24)
+        if (_id < 26)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 24;
+        _id -= 26;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 24)
+        if (_id < 26)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 24;
+        _id -= 26;
     }
     return _id;
 }
@@ -455,6 +473,13 @@ void client_worker::change_metric(int _t1, const QString & _t2, const QString & 
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t2))), const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t3))) };
     QMetaObject::activate(this, &staticMetaObject, 15, _a);
+}
+
+// SIGNAL 16
+void client_worker::champion(const QString & _t1)
+{
+    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(std::addressof(_t1))) };
+    QMetaObject::activate(this, &staticMetaObject, 16, _a);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE
